@@ -1,0 +1,552 @@
+node_sets {
+  key: "roadgraph"
+  value {
+    description: "Samples of roadgraph"
+    features {
+      key: "roadgraph_samples/xyz"
+      value {
+        description: "xyz coordinates"
+        dtype: DT_FLOAT
+        shape { dim { size: 30000 } dim { size: 3 } }
+      }
+    }
+    features {
+      key: "roadgraph_samples/dir"
+      value {
+        description: "direction"
+        dtype: DT_FLOAT
+        shape { dim { size: 30000 } dim { size: 3 } }
+      }
+    }
+    features {
+      key: "roadgraph_samples/type"
+      value {
+        description: "type"
+        dtype: DT_FLOAT
+        shape { dim { size: 30000 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "roadgraph_samples/valid"
+      value {
+        description: "if a sample point is valid"
+        dtype: DT_FLOAT
+        shape { dim { size: 30000 } dim { size: 1 } }
+      }
+    }
+  }
+}
+
+node_sets {
+  key: "traffic_light_past"
+  value {
+    description: "traffic light: past"
+    features {
+      key: "traffic_light_state/past/state"
+      value {
+        description: "state"
+        dtype: DT_UINT64
+        shape { dim { size: 10 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/past/valid"
+      value {
+        description: "valid"
+        dtype: DT_UINT64
+        shape { dim { size: 10 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/past/x"
+      value {
+        description: "x"
+        dtype: DT_FLOAT
+        shape { dim { size: 10 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/past/y"
+      value {
+        description: "y"
+        dtype: DT_FLOAT
+        shape { dim { size: 10 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/past/z"
+      value {
+        description: "z"
+        dtype: DT_FLOAT
+        shape { dim { size: 10 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/past/timestamp_micros"
+      value {
+        description: "timestamp"
+        dtype: DT_UINT64
+        shape { dim { size: 10 } }
+      }
+    }
+  }
+}
+
+node_sets {
+  key: "traffic_light_current"
+  value {
+    description: "traffic light: current"
+    features {
+      key: "traffic_light_state/current/state"
+      value {
+        description: "state"
+        dtype: DT_UINT64
+        shape { dim { size: 1 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/current/valid"
+      value {
+        description: "valid"
+        dtype: DT_UINT64
+        shape { dim { size: 1 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/current/x"
+      value {
+        description: "x"
+        dtype: DT_FLOAT
+        shape { dim { size: 1 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/current/y"
+      value {
+        description: "y"
+        dtype: DT_FLOAT
+        shape { dim { size: 1 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/current/z"
+      value {
+        description: "z"
+        dtype: DT_FLOAT
+        shape { dim { size: 1 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/current/timestamp_micros"
+      value {
+        description: "timestamp"
+        dtype: DT_UINT64
+        shape { dim { size: 1 } }
+      }
+    }
+  }
+}
+
+node_sets {
+  key: "traffic_light_future"
+  value {
+    description: "traffic light: future"
+    features {
+      key: "traffic_light_state/future/state"
+      value {
+        description: "state"
+        dtype: DT_UINT64
+        shape { dim { size: 80 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/future/valid"
+      value {
+        description: "valid"
+        dtype: DT_UINT64
+        shape { dim { size: 80 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/future/x"
+      value {
+        description: "x"
+        dtype: DT_FLOAT
+        shape { dim { size: 80 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/future/y"
+      value {
+        description: "y"
+        dtype: DT_FLOAT
+        shape { dim { size: 80 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/future/z"
+      value {
+        description: "z"
+        dtype: DT_FLOAT
+        shape { dim { size: 80 } dim { size: 16 } }
+      }
+    }
+    features {
+      key: "traffic_light_state/future/timestamp_micros"
+      value {
+        description: "timestamp"
+        dtype: DT_UINT64
+        shape { dim { size: 80 } }
+      }
+    }
+  }
+}
+
+node_sets {
+  key: "agents_past"
+  value {
+    description: "agents : past"
+    features {
+      key: "state/past/bbox_yaw"
+      value {
+        description: "bbox_yaw"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/height"
+      value {
+        description: "height"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/length"
+      value {
+        description: "length"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/timestamp_micros"
+      value {
+        description: "timestamp_micros"
+        dtype: DT_UINT64
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/valid"
+      value {
+        description: "valid"
+        dtype: DT_UINT64
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/vel_yaw"
+      value {
+        description: "vel_yaw"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/velocity_x"
+      value: {
+        description: "velocity_x"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/velocity_y"
+      value: {
+        description: "velocity_y"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/width"
+      value: {
+        description: "width"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/x"
+      value: {
+        description: "x"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/y"
+      value: {
+        description: "y"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+    features {
+      key: "state/past/z"
+      value: {
+        description: "z"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 10 } }
+      }
+    }
+  }
+}
+
+node_sets {
+  key: "agents_current"
+  value {
+    description: "agents : current"
+    features {
+      key: "state/current/bbox_yaw"
+      value: {
+        description: "bbox_yaw"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/height"
+      value: {
+        description: "height"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/length"
+      value: {
+        description: "length"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/timestamp_micros"
+      value: {
+        description: "timestamp_micros"
+        dtype: DT_UINT64
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/valid"
+      value: {
+        description: "valid"
+        dtype: DT_UINT64
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/vel_yaw"
+      value: {
+        description: "vel_yaw"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/velocity_x"
+      value: {
+        description: "velocity_x"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/velocity_y"
+      value: {
+        description: "velocity_y"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/width"
+      value: {
+        description: "width"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/x"
+      value: {
+        description: "x"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/y"
+      value: {
+        description: "y"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+    features {
+      key: "state/current/z"
+      value: {
+        description: "z"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 1 } }
+      }
+    }
+  }
+}
+
+node_sets {
+  key: "agents_future"
+  value {
+    description: "agents : future"
+    features {
+      key: "state/future/bbox_yaw"
+      value: {
+        description: "bbox_yaw"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/height"
+      value: {
+        description: "height"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/length"
+      value: {
+        description: "length"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/timestamp_micros"
+      value: {
+        description: "timestamp_micros"
+        dtype: DT_UINT64
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/valid"
+      value: {
+        description: "valid"
+        dtype: DT_UINT64
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/vel_yaw"
+      value: {
+        description: "vel_yaw"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/velocity_x"
+      value: {
+        description: "velocity_x"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/velocity_y"
+      value: {
+        description: "velocity_y"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/width"
+      value: {
+        description: "width"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/x"
+      value: {
+        description: "x"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/y"
+      value: {
+        description: "y"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+    features {
+      key: "state/future/z"
+      value: {
+        description: "z"
+        dtype: DT_FLOAT
+        shape { dim { size: 128 } dim { size: 80 } }
+      }
+    }
+  }
+}
+
+edge_sets {
+  key: "agent_to_agent"
+  value {
+    description: "connects agents to other agents; different from an agent connected with itself at a later timestep"
+
+  }
+}
+
+edge_sets {
+  key: "agent_to_roadgraph"
+  value {
+    description: "establishes positionality of agents in relation to roadgraph features"
+    
+  }
+}
+
+edge_sets {
+  key: "agent_to_traffic_light"
+  value {
+    description: "highlights effect of traffic lights on agents"
+    
+  }
+}
+
+edge_sets {
+  key: "agent_past_to_current"
+  value {
+    description: "Connects an agent at a single timestep to its future timestep"
+    
+  }
+}
+
+edge_sets {
+  key: "roadgraph_connections"
+  value {
+    description: "connectivity of road features"
+    
+  }
+}
