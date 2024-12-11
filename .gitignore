@@ -1,0 +1,56 @@
+
+# Python Bytecode and Cache Files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual Environment Files
+env/
+venv/
+
+# Colab Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Logs and Temporary Files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Output Files and Artifacts
+*.out
+*.class
+*.exe
+
+# Build Directories
+build/
+dist/
+
+# Jupyter Notebook Metadata
+*.ipynb~ 
+
+# Environment and Configuration Files
+.env
+*.cfg
+*.ini
+
+# TensorFlow and ML Artifacts
+*.pb
+*.pbtxt
+checkpoint
+model.ckpt-*
+events.out.tfevents.*
+
+# Data Files
+*.csv
+*.h5
+*.npz
+*.npy
+
+# Colab-Specific Metadata
+*.colab_metadata
+
+# OS-Specific Files
+.DS_Store
+Thumbs.db
